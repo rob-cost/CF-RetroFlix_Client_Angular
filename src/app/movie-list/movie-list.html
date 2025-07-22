@@ -1,0 +1,17 @@
+<div class="movie-grid">
+  <mat-card *ngFor="let movie of movies; let i = index" class="movie-card">
+    <mat-card-header>
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+    </mat-card-header>
+    <img src="{{ movie.ImagePath }}" />
+    <mat-card-content>
+      <p>
+        {{ movie.Description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matButton>LIKE</button>
+      <button matButton>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
