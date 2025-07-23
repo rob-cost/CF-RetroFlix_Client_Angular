@@ -1,7 +1,10 @@
+<app-nav-bar></app-nav-bar>
 <div class="movie-grid">
   <mat-card *ngFor="let movie of movies; let i = index" class="movie-card">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle>Director: {{ movie.Director }}</mat-card-subtitle>
+      <mat-card-subtitle>Rating: {{ movie.Rating }}</mat-card-subtitle>
     </mat-card-header>
     <img src="{{ movie.ImagePath }}" />
     <mat-card-content>
@@ -10,8 +13,10 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button matButton>LIKE</button>
-      <button matButton>SHARE</button>
+      <button matButton>Genre</button>
+      <button matButton>Director</button>
+      <button matButton>Details</button>
+      <button matButton>Add Favorite</button>
     </mat-card-actions>
   </mat-card>
 </div>

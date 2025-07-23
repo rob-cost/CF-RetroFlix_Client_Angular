@@ -31,8 +31,6 @@ export class SignupForm implements OnInit {
       (result) => {
         this.dialogRef.close(); // This will close the modal on success!
         console.log(result);
-        localStorage.setItem('token', result.Token);
-        localStorage.setItem('user', result.User.Username);
         this.snackBar.open(result, 'OK', {
           duration: 2000,
         });
