@@ -3,6 +3,10 @@ import { FetchApiData } from '../fetch-api-data';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { GenreDialog } from '../genre-dialog/genre-dialog';
+import { MovieDetailsDialog } from '../movie-details-dialog/movie-details-dialog';
+import { DirectorDialog } from '../director-dialog/director-dialog';
+
 @Component({
   selector: 'app-user-profile',
   standalone: false,
@@ -23,7 +27,8 @@ export class UserProfile implements OnInit {
   constructor(
     public fetchApiData: FetchApiData,
     public snackBar: MatSnackBar,
-    public router: Router
+    public router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +45,9 @@ export class UserProfile implements OnInit {
     console.log('Fav Movies', this.favoriteMovies);
   }
 
+  /**
+   * Method to fetch the data for the current logged in user
+   */
   loadUserData(): void {
     this.fetchApiData.getUser(this.username).subscribe((res) => {
       console.log(res);
@@ -54,16 +62,29 @@ export class UserProfile implements OnInit {
     });
   }
 
+  /**
+   * Method to update user informations
+   */
   updateUser(): void {
+    this.userDetails = {
+      Username: this.userDetails.Username,
+      Password: this.userDetails.Password,
+      Email: this.userDetails.Email,
+      Birthday: this.userDetails.Birthday,
+    };
     this.fetchApiData
       .updateUser(this.username, this.userDetails)
       .subscribe((res) => {
         this.snackBar.open(res, 'User info updated', {
           duration: 2000,
         });
+        console.log(this.userDetails);
       });
   }
 
+  /**
+   * Method to delete a user
+   */
   deleteUser(): void {
     this.fetchApiData.deleteUser(this.username).subscribe((res) => {
       if (res) {
@@ -85,7 +106,6 @@ export class UserProfile implements OnInit {
   getFavoriteMovies(): void {
     this.fetchApiData.getMovies().subscribe((resp: any) => {
       const allMovies: any[] = resp;
-      console.log('all movies', allMovies);
       this.favoriteMovies = allMovies.filter((movie) =>
         this.userDetails.FavoriteMovies.includes(movie.id)
       );
@@ -107,6 +127,7 @@ export class UserProfile implements OnInit {
         this.favoriteMovies = this.favoriteMovies.filter(
           (m: any) => m._id != movieId
         );
+        this.loadUserData();
       },
       (result) => {
         this.snackBar.open(
@@ -118,5 +139,38 @@ export class UserProfile implements OnInit {
         );
       }
     );
+  }
+
+  /**
+   * Method to open the dialog with informations about a genre
+   * @param genre The genre informations object
+   */
+  openGenreDialog(genre: any): void {
+    this.dialog.open(GenreDialog, {
+      data: genre,
+      width: '280px',
+    });
+  }
+
+  /**
+   * Method to open the dialog with informations about a director
+   * @param director The director informations object
+   */
+  openDirectorDialog(director: any): void {
+    this.dialog.open(DirectorDialog, {
+      data: director,
+      width: '280px',
+    });
+  }
+
+  /**
+   * Method to open the dialog with informations about a movie
+   * @param movie The movie object
+   */
+  openMovieDetailsDialog(movie: any): void {
+    this.dialog.open(MovieDetailsDialog, {
+      data: movie,
+      width: '280px',
+    });
   }
 }

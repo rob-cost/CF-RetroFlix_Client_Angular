@@ -19,6 +19,9 @@ import { MatGridList } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfile } from './user-profile/user-profile';
 import { NavBar } from './nav-bar/nav-bar';
+import { GenreDialog } from './genre-dialog/genre-dialog';
+import { DirectorDialog } from './director-dialog/director-dialog';
+import { MovieDetailsDialog } from './movie-details-dialog/movie-details-dialog';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePage },
@@ -36,6 +39,9 @@ const appRoutes: Routes = [
     MovieList,
     UserProfile,
     NavBar,
+    GenreDialog,
+    DirectorDialog,
+    MovieDetailsDialog,
   ],
   imports: [
     BrowserModule,

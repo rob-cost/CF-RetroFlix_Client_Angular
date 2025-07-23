@@ -32,6 +32,7 @@ export class SigninForm {
         console.log(result);
         localStorage.setItem('token', result.Token);
         localStorage.setItem('user', result.User.Username);
+        localStorage.setItem('password', result.User.Password);
         this.snackBar.open(result.User.Username, 'Login Successful', {
           duration: 2000,
         });

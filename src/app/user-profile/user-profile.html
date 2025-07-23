@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<div class="profile">
+<div class="profile-page">
   <mat-card class="profile-card">
     <mat-card-header class="profile-card-header">
       <mat-card-title>User Details</mat-card-title>
@@ -56,51 +56,53 @@
       </button>
     </mat-card-actions>
   </mat-card>
-</div>
-
-<div class="favorite-container">
-  <h2>Favorite Movies</h2>
-  <p *ngIf="favoriteMovies.length < 1">No Favorite Movies</p>
-  <div class="movie-grid">
-    <mat-card
-      *ngFor="let movie of favoriteMovies; let i = index"
-      class="mat-elevation-z4 movie-card"
-    >
-      <mat-card-header style="height: 10%">
-        <mat-card-title>
-          {{ movie.Title }}
-        </mat-card-title>
-      </mat-card-header>
-      <img
-        style="width: 100%; height: 80%; object-fit: contain"
-        src="{{ movie.ImagePath }}"
-      />
-      <mat-card-actions>
-        <!-- <button
-          mat-button
-          color="primary"
-          (click)="openGenreDialog(movie.Genre)"
-        >
-          Genre
-        </button>
-        <button
-          mat-button
-          color="primary"
-          (click)="openDirectorDialog(movie.Director)"
-        >
-          Director
-        </button>
-        <button
-          mat-button
-          color="primary"
-          (click)="openMovieDetailsDialog(movie)"
-        >
-          Details
-        </button> -->
-        <button mat-button (click)="removeFavorite(movie.id)">
-          <mat-icon>favorite</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+  <div class="favorite-section">
+    <h2 class="favorites-title">Favorite Movies</h2>
+    <h2 class="favorites-title" *ngIf="favoriteMovies.length < 1">
+      No Favorite Movies
+    </h2>
+    <div class="movie-grid">
+      <mat-card *ngFor="let movie of favoriteMovies; let i = index">
+        <mat-card-header>
+          <mat-card-title>{{ movie.Title }}</mat-card-title>
+          <mat-card-subtitle
+            >Director: {{ movie.Director?.Name }}</mat-card-subtitle
+          >
+          <mat-card-subtitle>Rating: {{ movie.Rating }}</mat-card-subtitle>
+        </mat-card-header>
+        <img src="{{ movie.ImagePath }}" />
+        <mat-card-content>
+          <p>
+            {{ movie.Description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-button
+            color="primary"
+            (click)="openGenreDialog(movie.Genre)"
+          >
+            Genre
+          </button>
+          <button
+            mat-button
+            color="primary"
+            (click)="openDirectorDialog(movie.Director)"
+          >
+            Director
+          </button>
+          <button
+            mat-button
+            color="primary"
+            (click)="openMovieDetailsDialog(movie)"
+          >
+            Details
+          </button>
+          <button mat-button (click)="removeFavorite(movie.id)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>

@@ -3,7 +3,9 @@
   <mat-card *ngFor="let movie of movies; let i = index" class="movie-card">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle>Director: {{ movie.Director }}</mat-card-subtitle>
+      <mat-card-subtitle
+        >Director: {{ movie.Director?.Name }}</mat-card-subtitle
+      >
       <mat-card-subtitle>Rating: {{ movie.Rating }}</mat-card-subtitle>
     </mat-card-header>
     <img src="{{ movie.ImagePath }}" />
@@ -13,10 +15,24 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button matButton>Genre</button>
-      <button matButton>Director</button>
-      <button matButton>Details</button>
-      <button matButton>Add Favorite</button>
+      <button matButton color="primary" (click)="openGenreDialog(movie.Genre)">
+        {{ movie.Genre?.Name }}
+      </button>
+      <button
+        matButton
+        color="primary"
+        (click)="openDirectorDialog(movie.Director)"
+      >
+        Director
+      </button>
+      <button matButton color="primary" (click)="openMovieDetailsDialog(movie)">
+        Details
+      </button>
+      <button mat-button (click)="handleFavorite(movie.id)">
+        <mat-icon>{{
+          isFavorite(movie.id) ? "favorite" : "favorite_border"
+        }}</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

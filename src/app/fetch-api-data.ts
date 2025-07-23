@@ -31,6 +31,8 @@ export class FetchApiData {
     return throwError('Something bad happened; please try again later.');
   }
 
+  /* --- POST API Calls --- */
+
   // Signup User
   signUpUser(userDetails: any): Observable<any> {
     return this.http
@@ -44,6 +46,20 @@ export class FetchApiData {
       .post(BASE_API_URL + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
+
+  // Add movie to Favorite
+  addToFavorites(username: string, movie_id: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.post(
+      `${BASE_API_URL}users/${username}/favorites/${movie_id}`,
+      {},
+      {
+        headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
+      }
+    );
+  }
+
+  /* --- GET API Calls --- */
 
   // Get All Movies
   getMovies(): Observable<any> {
@@ -142,7 +158,7 @@ export class FetchApiData {
   deleteFavMovie(username: any, movie_id: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .delete(`${BASE_API_URL}` + `users/${username}/favorites/${movie_id}`, {
+      .delete(`${BASE_API_URL}users/${username}/favorites/${movie_id}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

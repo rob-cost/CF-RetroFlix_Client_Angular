@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiData } from '../fetch-api-data';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-form',
@@ -20,7 +21,8 @@ export class SignupForm implements OnInit {
   constructor(
     public fetchApiData: FetchApiData,
     public dialogRef: MatDialogRef<SignupForm>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public route: Router
   ) {}
 
   ngOnInit(): void {}
@@ -29,9 +31,9 @@ export class SignupForm implements OnInit {
   signUpUser(): void {
     this.fetchApiData.signUpUser(this.userDetails).subscribe(
       (result) => {
-        this.dialogRef.close(); // This will close the modal on success!
+        this.dialogRef.close();
         console.log(result);
-        this.snackBar.open(result, 'OK', {
+        this.snackBar.open('Registration successful', 'OK', {
           duration: 2000,
         });
       },

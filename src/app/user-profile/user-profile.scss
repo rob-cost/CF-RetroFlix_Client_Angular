@@ -4,8 +4,14 @@ $accent-navy: #2c3e50;
 $white: #ffffff;
 $light-gray: #f8f9fa;
 
-.profile {
-  padding: 10px;
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: $light-gray;
 }
 
 .profile-card-content {
@@ -13,8 +19,12 @@ $light-gray: #f8f9fa;
 }
 
 .profile-card {
-  max-width: 400px;
-  margin: 20px, auto;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 40px;
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card-content {
@@ -31,4 +41,136 @@ $light-gray: #f8f9fa;
 
 .profile-card-button {
   gap: 15px;
+}
+
+.favorites-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.favorites-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $accent-navy;
+  margin-bottom: 16px;
+  text-align: left;
+  padding: 20px;
+}
+
+.movie-grid {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+
+.movie-card {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  mat-card-header {
+    background: linear-gradient(135deg, $primary-light-blue, $secondary-blue);
+    color: $white;
+    padding: 16px;
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: $white;
+    }
+
+    mat-card-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+mat-card-content {
+  padding: 16px;
+  flex-grow: 1;
+  background-color: $white;
+}
+
+mat-card-actions {
+  padding: 12px 16px 16px;
+  background-color: $light-gray;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(135, 206, 235, 0.2);
+
+  button {
+    flex: 1;
+    min-width: 60px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+
+    // Default button style
+    background-color: $light-gray;
+    color: $secondary-blue;
+
+    &:hover {
+      background-color: $light-gray;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .movie-grid {
+    grid: auto / auto;
+  }
+}
+
+@media (min-width: 531px) {
+  .movie-grid {
+    grid: auto / auto auto;
+  }
+}
+
+@media (min-width: 801px) {
+  .movie-grid {
+    grid: auto / auto auto auto;
+  }
+}
+
+@media (min-width: 1051px) {
+  .movie-grid {
+    grid: auto / auto auto auto auto;
+  }
 }
