@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiData } from '../fetch-api-data';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { GenreDialog } from '../genre-dialog/genre-dialog';
 import { MovieDetailsDialog } from '../movie-details-dialog/movie-details-dialog';

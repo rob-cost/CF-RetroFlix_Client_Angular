@@ -9,11 +9,11 @@
       <mat-card-subtitle>Rating: {{ movie.Rating }}</mat-card-subtitle>
     </mat-card-header>
     <img src="{{ movie.ImagePath }}" />
-    <mat-card-content>
+    <!-- <mat-card-content>
       <p>
         {{ movie.Description }}
       </p>
-    </mat-card-content>
+    </mat-card-content> -->
     <mat-card-actions>
       <button matButton color="primary" (click)="openGenreDialog(movie.Genre)">
         {{ movie.Genre?.Name }}

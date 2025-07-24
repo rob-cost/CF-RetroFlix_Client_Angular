@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("/img/retro_bg.jpg");
+  background-image: url("/img/background-neon.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,8 +12,17 @@
 
 .welcome-btns {
   display: flex;
+  gap: 12px;
+}
+
+button {
+  font-size: 15px;
 }
 
 .welcome_title {
-  font-size: 4vh;
+  font-size: 55px;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
 }

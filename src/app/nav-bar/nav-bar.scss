@@ -1,23 +1,37 @@
 // General Navbar Styling
+
+$primary-neon-pink: #ff00c8;
+$secondary-deep-purple: #400082;
+$accent-blue-glow: #5d00ff;
+$white: #ffffff;
+$light-gray: #f7f5ff;
+
 .navbar {
-  background-color: #f8f9fa; // light gray background
+  background: linear-gradient(
+    70deg,
+    $primary-neon-pink,
+    $secondary-deep-purple
+  );
   padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $white;
 
   .container-fluid {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 2.2rem;
+    color: $white;
     text-decoration: none;
+    transform: translateY(-3px);
 
     &:hover {
-      color: #007bff;
+      color: lighten($white, 10%);
     }
   }
 
@@ -30,23 +44,34 @@
 
   .nav-item {
     .nav-link {
-      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      color: $white;
+      font-size: 1.1rem;
       text-decoration: none;
       font-weight: 500;
       padding: 0.5rem 0;
+      transition: color 0.3s ease;
+
+      i,
+      .material-icons {
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
 
       &:hover {
-        color: #007bff;
-        text-decoration: underline;
+        color: $white;
+        transform: translateY(-2px);
       }
 
       &.active {
-        color: #0d6efd;
+        color: $white;
         font-weight: 600;
       }
 
       &.disabled {
-        color: #aaa;
+        color: rgba(255, 255, 255, 0.4);
         cursor: not-allowed;
       }
     }

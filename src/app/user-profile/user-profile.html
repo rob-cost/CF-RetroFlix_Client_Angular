@@ -62,7 +62,10 @@
       No Favorite Movies
     </h2>
     <div class="movie-grid">
-      <mat-card *ngFor="let movie of favoriteMovies; let i = index">
+      <mat-card
+        class="movie-card"
+        *ngFor="let movie of favoriteMovies; let i = index"
+      >
         <mat-card-header>
           <mat-card-title>{{ movie.Title }}</mat-card-title>
           <mat-card-subtitle
@@ -71,11 +74,11 @@
           <mat-card-subtitle>Rating: {{ movie.Rating }}</mat-card-subtitle>
         </mat-card-header>
         <img src="{{ movie.ImagePath }}" />
-        <mat-card-content>
+        <!-- <mat-card-content>
           <p>
             {{ movie.Description }}
           </p>
-        </mat-card-content>
+        </mat-card-content> -->
         <mat-card-actions>
           <button
             mat-button
