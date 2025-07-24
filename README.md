@@ -1,8 +1,9 @@
-#  Retro Movies App
+#  RetroFlix_Angular 
 
 ##  Project Overview
 
 RetroFlix_Angular is a single-page Angular application built with TypeScript and Angular Material. It connects to a custom-built Movie API that provides data on classic retro films. Users can register, manage their profiles, explore a catalog of movies, and create a personalized list of favorite films. The application offers detailed views of movie genres and directors.
+You can visit the webpage here:  https://rob-cost.github.io/CF-RetroFlix_Client_Angular/welcome
 
 ---
 
