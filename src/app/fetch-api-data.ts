@@ -33,21 +33,45 @@ export class FetchApiData {
 
   /* --- POST API Calls --- */
 
-  // Signup User
+  /** Registers a new user account
+   *
+   * @description Makes a POST request to create a new user account with the provided user details.
+   *
+   * @param userDetails - Object containing user registration information (username, email, password, etc.)
+   * @returns Observable that emits the registration response on success, or error on failure
+   */
+
   signUpUser(userDetails: any): Observable<any> {
     return this.http
       .post(BASE_API_URL + 'users', userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // SignIn User
+  /**
+   * Authenticates a user with login credentials
+   *
+   * @description Makes a POST request to authenticate user credentials and receive an access token.
+   *
+   * @param userDetails - Object containing login credentials (username and password)
+   * @returns Observable that emits the authentication response with token on success, or error on failure
+   */
+
   signInUser(userDetails: any): Observable<any> {
     return this.http
       .post(BASE_API_URL + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // Add movie to Favorite
+  /**
+   * Adds a movie to user's favorites list
+   *
+   * @description Makes an authenticated POST request to add a specific movie to the user's favorite movies collection.
+   *
+   * @param username - The username of the user
+   * @param movie_id - The ID of the movie to add to favorites
+   * @returns Observable that emits the response on success, or error on failure
+   */
+
   addToFavorites(username: string, movie_id: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.post(
@@ -61,7 +85,14 @@ export class FetchApiData {
 
   /* --- GET API Calls --- */
 
-  // Get All Movies
+  /**
+   * Retrieves all available movies from the database
+   *
+   * @description Makes an authenticated GET request to fetch the complete list of movies. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @returns Observable that emits an array of movie objects on success, or error on failure
+   */
+
   getMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     console.log('Token received', token);
@@ -74,7 +105,15 @@ export class FetchApiData {
       .pipe(catchError(this.handleError));
   }
 
-  // Get a specific Movie
+  /**
+   * Retrieves detailed information for a specific movie by title
+   *
+   * @description Makes an authenticated GET request to fetch movie details using the movie's title. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param movie - Movie object containing the Title property
+   * @returns Observable that emits the movie details object on success, or error on failure
+   */
+
   getMovieByTitle(movie: any): Observable<any> {
     const token = localStorage.getItem('token');
     const movieTitle = movie.Title;
@@ -87,7 +126,15 @@ export class FetchApiData {
       .pipe(catchError(this.handleError));
   }
 
-  // Get a Director
+  /**
+   * Retrieves director information for a specific movie
+   *
+   * @description Makes an authenticated GET request to fetch director details using the movie's director name. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param movie - Movie object containing the Director property
+   * @returns Observable that emits the director information on success, or error on failure
+   */
+
   getDirector(movie: any): Observable<any> {
     const token = localStorage.getItem('token');
     const movieDirector = movie.Director;
@@ -100,7 +147,15 @@ export class FetchApiData {
       .pipe(catchError(this.handleError));
   }
 
-  // Get a Genre
+  /**
+   * Retrieves genre information for a specific movie
+   *
+   * @description Makes an authenticated GET request to fetch genre details using the movie's genre name. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param movie - Movie object containing the Genre property
+   * @returns Observable that emits the genre information on success, or error on failure
+   */
+
   getGenre(movie: any): Observable<any> {
     const token = localStorage.getItem('token');
     const movieGenre = movie.Genre;
@@ -113,7 +168,15 @@ export class FetchApiData {
       .pipe(catchError(this.handleError));
   }
 
-  // Get a User
+  /**
+   * Retrieves user information by username
+   *
+   * @description Makes an authenticated GET request to fetch user details. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param username - The username of the user to retrieve
+   * @returns Observable that emits the user data object on success, or error on failure
+   */
+
   getUser(username: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -127,7 +190,16 @@ export class FetchApiData {
 
   /* --- PUT API Calls --- */
 
-  // Update User info
+  /**
+   * Updates user information for a specific user
+   *
+   * @description Makes an authenticated PUT request to update user details. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param username - The username of the user to update
+   * @param userDetails - Object containing the user data fields to be updated
+   * @returns Observable that emits the updated user data object on success, or error on failure
+   */
+
   updateUser(username: String, userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -141,7 +213,15 @@ export class FetchApiData {
 
   /* --- DELETE API Calls --- */
 
-  // Delete a User
+  /**
+   * Deletes a user account by username
+   *
+   * @description Makes an authenticated DELETE request to remove a user from the system. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param username - The username of the user to delete
+   * @returns Observable that emits the processed response data on success, or error on failure
+   */
+
   deleteUser(username: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -154,7 +234,16 @@ export class FetchApiData {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // Delete a Movie from Favorite
+  /**
+   * Removes a movie from user's favorite movies list
+   *
+   * @description Makes an authenticated DELETE request to remove a specific movie from the user's favorites. Requires a valid JWT token stored in localStorage for authorization.
+   *
+   * @param username - The username of the user whose favorites to modify
+   * @param movie_id - The ID of the movie to remove from favorites
+   * @returns Observable that emits the response on success, or error on failure
+   */
+
   deleteFavMovie(username: any, movie_id: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http

@@ -38,6 +38,14 @@ export class MovieList {
     this.loadUserData();
   }
 
+  /**
+   * Loads and processes current user data from the API
+   *
+   * @description Fetches user information using the stored username, processes the response data, and updates the component's userDetails object. Also triggers loading of favorite movies data.
+   *
+   * @returns void
+   */
+
   loadUserData(): void {
     this.fetchApiData.getUser(this.username).subscribe((res) => {
       console.log(res);
@@ -52,8 +60,13 @@ export class MovieList {
   }
 
   /**
-   * Method to fetch all movies
+   * Get an array with a list of Movie objects from the API
+   *
+   * @description Fetches a list of all movies
+   *
+   * @returns void
    */
+
   getMovies(): void {
     this.fetchApiData.getMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -62,18 +75,27 @@ export class MovieList {
   }
 
   /**
-   * Checks if a movie is a favorite
+   * Checks the movie's status if is favorite
+   *
    * @param movieId ID of the movie to check
+   *
    * @returns True if the movie is a favorite, false otherwise
    */
+
   isFavorite(movieID: string): boolean {
     return this.userDetails.FavoriteMovies.includes(movieID);
   }
 
   /**
-   * Handler to add a movie to user favorites or to remove it
-   * @param movieId The movie id to add or remove from or to favorites
+   * Check movie's favorite status
+   *
+   * @description Chekc if a movie is in the favorite list or not
+   *
+   * @param movieID ID of a specific movie
+   *
+   * @returns void
    */
+
   handleFavorite(movieID: string): void {
     const isFav = this.userDetails.FavoriteMovies.includes(movieID);
     const action = isFav
@@ -90,9 +112,14 @@ export class MovieList {
   }
 
   /**
-   * Method to open the dialog with informations about a genre
-   * @param genre The genre informations object
+   * Opens a dialog displaying genre information
+   *
+   * @description Launches a modal dialog to show details about a specific movie genre with predefined width styling.
+   *
+   * @param genre - The genre object containing information to display in the dialog
+   * @returns void
    */
+
   openGenreDialog(genre: any): void {
     this.dialog.open(GenreDialog, {
       data: genre,
@@ -101,9 +128,14 @@ export class MovieList {
   }
 
   /**
-   * Method to open the dialog with informations about a director
-   * @param director The director informations object
+   * Opens a dialog displaying director information
+   *
+   * @description Launches a modal dialog to show details about a specific movie director with predefined width styling.
+   *
+   * @param director - The director object containing information to display in the dialog
+   * @returns void
    */
+
   openDirectorDialog(director: any): void {
     this.dialog.open(DirectorDialog, {
       data: director,
@@ -112,9 +144,14 @@ export class MovieList {
   }
 
   /**
-   * Method to open the dialog with informations about a movie
-   * @param movie The movie object
+   * Opens a dialog displaying detailed movie information
+   *
+   * @description Launches a modal dialog to show comprehensive details about a specific movie with predefined width styling.
+   *
+   * @param movie - The movie object containing information to display in the dialog
+   * @returns void
    */
+
   openMovieDetailsDialog(movie: any): void {
     this.dialog.open(MovieDetailsDialog, {
       data: movie,

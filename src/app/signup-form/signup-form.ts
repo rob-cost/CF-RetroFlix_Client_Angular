@@ -27,7 +27,14 @@ export class SignupForm implements OnInit {
 
   ngOnInit(): void {}
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * Registers a new user account
+   *
+   * @description Sends user registration data to API, closes the dialog on success, and displays appropriate success or error messages via snackbar.
+   *
+   * @returns void
+   */
+
   signUpUser(): void {
     this.fetchApiData.signUpUser(this.userDetails).subscribe(
       (result) => {
