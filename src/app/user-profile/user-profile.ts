@@ -49,7 +49,7 @@ export class UserProfile implements OnInit {
   /**
    * Loads and processes current user data from the API
    *
-   * @description Fetches user information using the stored username, processes the response data, and updates the component's userDetails object. Also triggers loading of favorite movies data.
+   * @remarks Fetches user information using the stored username, processes the response data, and updates the component's userDetails object. Also triggers loading of favorite movies data.
    *
    * @returns void
    */
@@ -71,7 +71,7 @@ export class UserProfile implements OnInit {
   /**
    * Updates the current user's profile information
    *
-   * @description Prepares user data by excluding FavoriteMovies field, sends update request to API, and displays success notification via snackbar.
+   * @remarks Prepares user data by excluding FavoriteMovies field, sends update request to API, and displays success notification via snackbar.
    *
    * @returns void
    */
@@ -96,7 +96,7 @@ export class UserProfile implements OnInit {
   /**
    * Deletes the current user account and redirects to welcome page
    *
-   * @description Sends delete request to API, clears local storage on success, displays confirmation message, and navigates back to the welcome screen.
+   * @remarks Sends delete request to API, clears local storage on success, displays confirmation message, and navigates back to the welcome screen.
    *
    * @returns void
    */
@@ -118,7 +118,7 @@ export class UserProfile implements OnInit {
   /**
    * Retrieves and filters user's favorite movies from all available movies
    *
-   * @description Fetches all movies from API and filters them to show only those that match the user's favorite movie IDs stored in userDetails.
+   * @remarks Fetches all movies from API and filters them to show only those that match the user's favorite movie IDs stored in userDetails.
    *
    * @returns void
    */
@@ -136,7 +136,7 @@ export class UserProfile implements OnInit {
   /**
    * Removes a movie from the user's favorites list
    *
-   * @description Sends API request to delete movie from favorites, updates local favoriteMovies array on success, refreshes user data, and displays appropriate success or error messages.
+   * @remarks Sends API request to delete movie from favorites, updates local favoriteMovies array on success, refreshes user data, and displays appropriate success or error messages.
    *
    * @param movieId - The ID of the movie to remove from favorites
    * @returns void
@@ -168,7 +168,7 @@ export class UserProfile implements OnInit {
   /**
    * Opens a dialog displaying genre information
    *
-   * @description Launches a modal dialog to show details about a specific movie genre with predefined width styling.
+   * @remarks Launches a modal dialog to show details about a specific movie genre with predefined width styling.
    *
    * @param genre - The genre object containing information to display in the dialog
    * @returns void
@@ -184,7 +184,7 @@ export class UserProfile implements OnInit {
   /**
    * Opens a dialog displaying director information
    *
-   * @description Launches a modal dialog to show details about a specific movie director with predefined width styling.
+   * @remarks Launches a modal dialog to show details about a specific movie director with predefined width styling.
    *
    * @param director - The director object containing information to display in the dialog
    * @returns void
@@ -200,7 +200,7 @@ export class UserProfile implements OnInit {
   /**
    * Opens a dialog displaying detailed movie information
    *
-   * @description Launches a modal dialog to show comprehensive details about a specific movie with predefined width styling.
+   * @remarks Launches a modal dialog to show comprehensive details about a specific movie with predefined width styling.
    *
    * @param movie - The movie object containing information to display in the dialog
    * @returns void

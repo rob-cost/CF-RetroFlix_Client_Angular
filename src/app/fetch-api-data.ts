@@ -35,7 +35,7 @@ export class FetchApiData {
 
   /** Registers a new user account
    *
-   * @description Makes a POST request to create a new user account with the provided user details.
+   * @remarks Makes a POST request to create a new user account with the provided user details.
    *
    * @param userDetails - Object containing user registration information (username, email, password, etc.)
    * @returns Observable that emits the registration response on success, or error on failure
@@ -50,7 +50,7 @@ export class FetchApiData {
   /**
    * Authenticates a user with login credentials
    *
-   * @description Makes a POST request to authenticate user credentials and receive an access token.
+   * @remarks Makes a POST request to authenticate user credentials and receive an access token.
    *
    * @param userDetails - Object containing login credentials (username and password)
    * @returns Observable that emits the authentication response with token on success, or error on failure
@@ -65,7 +65,7 @@ export class FetchApiData {
   /**
    * Adds a movie to user's favorites list
    *
-   * @description Makes an authenticated POST request to add a specific movie to the user's favorite movies collection.
+   * @remarks Makes an authenticated POST request to add a specific movie to the user's favorite movies collection.
    *
    * @param username - The username of the user
    * @param movie_id - The ID of the movie to add to favorites
@@ -88,7 +88,7 @@ export class FetchApiData {
   /**
    * Retrieves all available movies from the database
    *
-   * @description Makes an authenticated GET request to fetch the complete list of movies. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated GET request to fetch the complete list of movies. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @returns Observable that emits an array of movie objects on success, or error on failure
    */
@@ -108,7 +108,7 @@ export class FetchApiData {
   /**
    * Retrieves detailed information for a specific movie by title
    *
-   * @description Makes an authenticated GET request to fetch movie details using the movie's title. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated GET request to fetch movie details using the movie's title. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param movie - Movie object containing the Title property
    * @returns Observable that emits the movie details object on success, or error on failure
@@ -129,7 +129,7 @@ export class FetchApiData {
   /**
    * Retrieves director information for a specific movie
    *
-   * @description Makes an authenticated GET request to fetch director details using the movie's director name. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated GET request to fetch director details using the movie's director name. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param movie - Movie object containing the Director property
    * @returns Observable that emits the director information on success, or error on failure
@@ -150,7 +150,7 @@ export class FetchApiData {
   /**
    * Retrieves genre information for a specific movie
    *
-   * @description Makes an authenticated GET request to fetch genre details using the movie's genre name. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated GET request to fetch genre details using the movie's genre name. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param movie - Movie object containing the Genre property
    * @returns Observable that emits the genre information on success, or error on failure
@@ -171,7 +171,7 @@ export class FetchApiData {
   /**
    * Retrieves user information by username
    *
-   * @description Makes an authenticated GET request to fetch user details. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated GET request to fetch user details. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param username - The username of the user to retrieve
    * @returns Observable that emits the user data object on success, or error on failure
@@ -193,7 +193,7 @@ export class FetchApiData {
   /**
    * Updates user information for a specific user
    *
-   * @description Makes an authenticated PUT request to update user details. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated PUT request to update user details. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param username - The username of the user to update
    * @param userDetails - Object containing the user data fields to be updated
@@ -216,7 +216,7 @@ export class FetchApiData {
   /**
    * Deletes a user account by username
    *
-   * @description Makes an authenticated DELETE request to remove a user from the system. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated DELETE request to remove a user from the system. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param username - The username of the user to delete
    * @returns Observable that emits the processed response data on success, or error on failure
@@ -237,7 +237,7 @@ export class FetchApiData {
   /**
    * Removes a movie from user's favorite movies list
    *
-   * @description Makes an authenticated DELETE request to remove a specific movie from the user's favorites. Requires a valid JWT token stored in localStorage for authorization.
+   * @remarks Makes an authenticated DELETE request to remove a specific movie from the user's favorites. Requires a valid JWT token stored in localStorage for authorization.
    *
    * @param username - The username of the user whose favorites to modify
    * @param movie_id - The ID of the movie to remove from favorites

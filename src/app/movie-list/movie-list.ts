@@ -41,7 +41,7 @@ export class MovieList {
   /**
    * Loads and processes current user data from the API
    *
-   * @description Fetches user information using the stored username, processes the response data, and updates the component's userDetails object. Also triggers loading of favorite movies data.
+   * @remarks Fetches user information using the stored username, processes the response data, and updates the component's userDetails object. Also triggers loading of favorite movies data.
    *
    * @returns void
    */
@@ -62,7 +62,7 @@ export class MovieList {
   /**
    * Get an array with a list of Movie objects from the API
    *
-   * @description Fetches a list of all movies
+   * @remarks Fetches a list of all movies
    *
    * @returns void
    */
@@ -89,7 +89,7 @@ export class MovieList {
   /**
    * Check movie's favorite status
    *
-   * @description Chekc if a movie is in the favorite list or not
+   * @remarks Chekc if a movie is in the favorite list or not
    *
    * @param movieID ID of a specific movie
    *
@@ -114,7 +114,7 @@ export class MovieList {
   /**
    * Opens a dialog displaying genre information
    *
-   * @description Launches a modal dialog to show details about a specific movie genre with predefined width styling.
+   * @remarks Launches a modal dialog to show details about a specific movie genre with predefined width styling.
    *
    * @param genre - The genre object containing information to display in the dialog
    * @returns void
@@ -130,7 +130,7 @@ export class MovieList {
   /**
    * Opens a dialog displaying director information
    *
-   * @description Launches a modal dialog to show details about a specific movie director with predefined width styling.
+   * @remarks Launches a modal dialog to show details about a specific movie director with predefined width styling.
    *
    * @param director - The director object containing information to display in the dialog
    * @returns void
@@ -146,7 +146,7 @@ export class MovieList {
   /**
    * Opens a dialog displaying detailed movie information
    *
-   * @description Launches a modal dialog to show comprehensive details about a specific movie with predefined width styling.
+   * @remarks Launches a modal dialog to show comprehensive details about a specific movie with predefined width styling.
    *
    * @param movie - The movie object containing information to display in the dialog
    * @returns void

@@ -30,7 +30,7 @@ export class SignupForm implements OnInit {
   /**
    * Registers a new user account
    *
-   * @description Sends user registration data to API, closes the dialog on success, and displays appropriate success or error messages via snackbar.
+   * @remarks Sends user registration data to API, closes the dialog on success, and displays appropriate success or error messages via snackbar.
    *
    * @returns void
    */

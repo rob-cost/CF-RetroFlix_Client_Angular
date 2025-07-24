@@ -28,7 +28,7 @@ export class SigninForm {
   /**
    * Authenticate and sign in a user
    *
-   * @description Sends username and password data to API for verification and store the uername, password and token in local storage.
+   * @remarks Sends username and password data to API for verification and store the uername, password and token in local storage.
    *
    * @returns void
    */
