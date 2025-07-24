@@ -1,59 +1,83 @@
-# RetroFlix
+#  Retro Movies App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+##  Project Overview
 
-## Development server
+RetroFlix_Angular is a single-page Angular application built with TypeScript and Angular Material. It connects to a custom-built Movie API that provides data on classic retro films. Users can register, manage their profiles, explore a catalog of movies, and create a personalized list of favorite films. The application offers detailed views of movie genres and directors.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+##  Table of Contents
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Usage](#usage)
+- [Interface examples](#interface-examples)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##  Tech Stack
 
-```bash
-ng generate component component-name
-```
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular Material](https://material.angular.io/)
+- [RxJS](https://rxjs.dev/)
+- [Movie API (custom-built REST API)](https://github.com/your-username/movie-api)
+- [SCSS](https://sass-lang.com/)
+- [GitHub Pages](https://pages.github.com/) (for deployment)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+##  Features
 
-## Building
+- ✅ Built with **Angular CLI** and **TypeScript**
+- ✅ Styled with **Angular Material** components and custom **SCSS**
+- ✅ **User registration** and **authentication**
+- ✅ **Update and delete** user profiles
+- ✅ View a catalog of retro movies with:
+  - Descriptions
+  - Genres
+  - Director details
+- ✅ Add or remove movies from a **Favorites list**
+- ✅ Open **genre descriptions** and **director bios** in modal dialogs
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+##  Usage
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Prerequisites
 
-## Running unit tests
+- Node.js
+- Angular CLI (`npm install -g @angular/cli`)
+- A running instance of the [Movie API](https://github.com/your-username/movie-api) (local or deployed)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Getting Started
 
-```bash
-ng test
-```
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/rob-cost/CF-RetroFlix_Client_Angular.git
+   cd CF-RetroFlix_Client_Angular
+  ```
 
-## Running end-to-end tests
+2. Install dependencies
+  ```bash
+  npm install
+  ```
 
-For end-to-end (e2e) testing, run:
+3. Start the development server
+  ```bash
+  ng serve
+  ```
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+###  Interface examples
 
-## Additional Resources
+<img width="873" height="675" alt="Screenshot 2025-07-24 at 10 56 42" src="https://github.com/user-attachments/assets/ccbfbbe7-408d-493e-a819-b2e5599547f1" />
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<img width="1889" height="878" alt="Screenshot 2025-07-24 at 10 57 09" src="https://github.com/user-attachments/assets/cb98a93a-684a-4dc6-b81e-e3114294fe8f" />
+
+<img width="1531" height="657" alt="Screenshot 2025-07-24 at 10 57 30" src="https://github.com/user-attachments/assets/a99f2778-0843-4f04-91ab-66b7228d2936" />
+
+<img width="1910" height="955" alt="Screenshot 2025-07-24 at 10 57 43" src="https://github.com/user-attachments/assets/231fec49-be27-408f-8087-23b8fb083015" />
+
