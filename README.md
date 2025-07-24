@@ -54,20 +54,20 @@ RetroFlix_Angular is a single-page Angular application built with TypeScript and
 ### Getting Started
 
 1. Clone this repo:
-   ```bash
-   git clone https://github.com/rob-cost/CF-RetroFlix_Client_Angular.git
-   cd CF-RetroFlix_Client_Angular
-  ```
+```bash
+git clone https://github.com/rob-cost/CF-RetroFlix_Client_Angular.git
+cd CF-RetroFlix_Client_Angular
+```
 
 2. Install dependencies
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
 3. Start the development server
-  ```bash
-  ng serve
-  ```
+```bash
+ng serve
+```
 
 ---
 
